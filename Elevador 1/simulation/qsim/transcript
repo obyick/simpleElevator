@@ -1,0 +1,26 @@
+# do ELEVADOR.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ELEVADOR
+# 
+# Top level modules:
+# 	ELEVADOR
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ELEVADOR_vlg_sample_tst
+# -- Compiling module ELEVADOR_vlg_check_tst
+# -- Compiling module ELEVADOR_vlg_vec_tst
+# 
+# Top level modules:
+# 	ELEVADOR_vlg_vec_tst
+# vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.ELEVADOR_vlg_vec_tst 
+# Loading work.ELEVADOR_vlg_vec_tst
+# Loading work.ELEVADOR
+# Loading cycloneiv_ver.cycloneiv_lcell_comb
+# Loading cycloneiv_ver.cycloneiv_io_obuf
+# Loading cycloneiv_ver.cycloneiv_io_ibuf
+# Loading work.ELEVADOR_vlg_sample_tst
+# Loading work.ELEVADOR_vlg_check_tst
+# Simulation passed !
+# ** Note: $finish    : ELEVADOR.vt(260)
+#    Time: 1 us  Iteration: 0  Instance: /ELEVADOR_vlg_vec_tst/tb_out

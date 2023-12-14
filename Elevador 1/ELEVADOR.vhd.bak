@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ELEVADOR is
+port(
+	ST0, ST1, ST2, LT, GT, EQ: in bit;
+	openDoor, NS0, NS1, NS2: out bit,
+	statusElev: out bit_vector(1 downto 0);
+);
+end ELEVADOR;
+
+architecture main of ELEVADOR is
+
+signal SE1: bit;
+signal SE2: bit;
+
+begin
+	
+	SE1 <= ST0 and (not ST1) and (not ST2) and (not LT) and (GT xor EQ);
+	SE2 <= (not ST0) and ST1 and ST2 and (not GT) and (LT xor EQ);
+	openDoor <= (not ST0) and (not ST1) and (((not ST2) and (not LT) and (not GT) and EQ) or (ST2 and (((not LT) and (not GT) and EQ) or ((not EQ) and (LT XOR GT)))));
+	
+	NS0 <= ST2 and (not LT) and GT and (ST0 xor ST1);
+	NS1 <= ((not STO) and ((ST2 and ((not ST1) and (not EQ) and (LT XOR GT))) or (ST1 and (not GT) and (LT XOR EQ)))) or (((not ST2) and (not GT) and ((not ST0) and ST1 and LT and (not EQ))) or (ST0 and (not ST1) and (not LT) and EQ))
+	NS2 <= (not ST0) and (not GT) and (((not ST1) and (not LT) and EQ) or (ST1 and LT and (not GT) and (not EQ)))
+	
+	
+	statusElev(0) <= SE1;
+	statusElev(1) <= SE2;
+	
+end architecture main;

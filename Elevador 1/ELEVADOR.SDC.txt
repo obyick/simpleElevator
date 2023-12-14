@@ -1,0 +1,3 @@
+create_clock -period 10 [get_ports clock_signal]
+set_input_delay -clock clock_signal -max 2 [get_ports input_port]
+set_output_delay -clock clock_signal -max 2 [get_ports output_port]

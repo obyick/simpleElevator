@@ -1,0 +1,45 @@
+|Lifter
+CALL_0 => process_0.IN1
+CALL_1 => process_0.IN1
+INTERNAL => currentFloor.OUTPUTSELECT
+STOP => NS.OUTPUTSELECT
+STOP => NS.OUTPUTSELECT
+STOP => NS.OUTPUTSELECT
+CLK => currentFloor.CLK
+CLK => NS[0]~reg0.CLK
+CLK => NS[1]~reg0.CLK
+CLK => NS[2]~reg0.CLK
+CLK => statusElev[0]~reg0.CLK
+CLK => statusElev[1]~reg0.CLK
+CLK => LCD[0]~reg0.CLK
+CLK => LED_1~reg0.CLK
+CLK => LED_0~reg0.CLK
+CLK => NS2.CLK
+CLK => NS1.CLK
+CLK => NS0.CLK
+CLK => openDoor~reg0.CLK
+CLK => SE2.CLK
+CLK => SE1.CLK
+ST[0] => NS.DATAB
+ST[1] => NS.DATAB
+ST[2] => NS.DATAB
+LT => openDoor.IN0
+LT => NS2.IN0
+GT => openDoor.IN1
+GT => NS2.IN1
+EQ => openDoor.IN1
+EQ => NS2.IN1
+openDoor <= openDoor~reg0.DB_MAX_OUTPUT_PORT_TYPE
+NS[0] <= NS[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+NS[1] <= NS[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+NS[2] <= NS[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+statusElev[0] <= statusElev[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+statusElev[1] <= statusElev[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED_0 <= LED_0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED_1 <= LED_1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD[0] <= LCD[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD[1] <= <GND>
+LCD[2] <= <GND>
+LCD[3] <= <GND>
+
+
